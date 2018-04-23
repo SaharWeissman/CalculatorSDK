@@ -1,4 +1,4 @@
-package core
+package main.core
 
 import util.CharUtils
 import java.util.*
