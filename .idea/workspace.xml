@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="273e7844-64e8-44b9-8f0d-605c8a304cd6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime__2_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime__3_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConsoleApp/src/com/saharw/calculator/console/Main.kt" afterPath="$PROJECT_DIR$/ConsoleApp/src/com/saharw/calculator/console/Main.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lib/src/core/Calculator.kt" afterPath="$PROJECT_DIR$/Lib/src/core/Calculator.kt" />
@@ -407,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524508037896</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="remove untracked cached files">
+      <created>1524508071540</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524508071540</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -449,7 +449,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove cached files that were added to gitignore" />
     <MESSAGE value="update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
+    <MESSAGE value="remove untracked cached files" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove untracked cached files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
