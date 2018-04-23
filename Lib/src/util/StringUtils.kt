@@ -26,25 +26,18 @@ object StringUtils {
     }
 
     fun convertInfixToPostfix(expression: String) : String {
-        var postfix  = StringBuilder()
+        var postfix = StringBuilder()
         var operatorStack = Stack<Char>()
-        var poppedChar = ' '
-        for(i in 0 until expression.length){
+        for (i in 0 until expression.length) {
             var currChar = expression[i]
-
-            // if char is not operator - concatenate to String
             if(!CharUtils.isOperator(currChar)){
                 postfix.append(currChar)
-            }
-
-            else if(currChar == ')'){
-                while(poppedChar != '('){
-                    poppedChar = operatorStack.pop()
-                    postfix.append(poppedChar)
+            }else if (currChar == ')'){
+                while(operatorStack.peek() != '('){
+                    postfix.append(operatorStack.pop())
                 }
-            }
-
-             else {
+                operatorStack.pop()
+            }else {
                 while(operatorStack.isNotEmpty() && currChar != '(' && CharUtils.precedence(operatorStack.peek()) >= CharUtils.precedence(currChar)){
                     postfix.append(operatorStack.pop())
                 }
@@ -52,11 +45,10 @@ object StringUtils {
             }
         }
 
-        // pop any remaining operator
-        while(operatorStack.isNotEmpty()){
+        // drain stack for last operator (if exist)
+        while (operatorStack.isNotEmpty()) {
             postfix.append(operatorStack.pop())
         }
-
         return postfix.toString()
     }
 }

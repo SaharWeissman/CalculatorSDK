@@ -19,20 +19,20 @@ class ExpressionTree {
             var currChar = expressionPostfix[i]
 
             // if char is not an operator - construct node & add to stack
-            if(!CharUtils.isOperator(currChar) && currChar != ' '){
+            if(!CharUtils.isOperator(currChar)){
                 n = Node(currChar)
                 nodeStack.push(n)
-            }else if(CharUtils.isOperator(currChar)){ // char is an operator
+            }else { // char is an operator
 
                 n = Node(currChar)
 
                 // pop 2 operands
-                nLeft = nodeStack.pop()
                 nRight = nodeStack.pop()
+                nLeft = nodeStack.pop()
 
                 // make children of operator node
-                n.left = nLeft
                 n.right = nRight
+                n.left = nLeft
 
                 // push operator node to stack
                 nodeStack.push(n)
