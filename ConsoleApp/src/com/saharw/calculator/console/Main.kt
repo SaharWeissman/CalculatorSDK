@@ -9,6 +9,4 @@ val input = "(1+2)/(2+2)"
 
 fun main(args:Array<String>) {
     var calculator = Calculator()
-    calculator.append(input)
-    println("calculator eval input = $input, result = ${calculator.eval()}")
 }
