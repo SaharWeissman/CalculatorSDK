@@ -1,6 +1,6 @@
-package main.core
+package com.saharw.calculatorsdk.core
 
-import util.CharUtils
+import com.saharw.calculatorsdk.util.CharUtils
 import java.util.*
 
 class ExpressionTree {

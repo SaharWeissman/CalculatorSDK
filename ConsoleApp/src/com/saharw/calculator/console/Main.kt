@@ -1,6 +1,6 @@
 package com.saharw.calculator.console
 
-import main.core.Calculator
+import com.saharw.calculatorsdk.core.Calculator
 
 /**
  * Created by Sahar on 04/22/2018.
