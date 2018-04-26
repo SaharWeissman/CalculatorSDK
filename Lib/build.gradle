@@ -3,6 +3,9 @@ version '1.0.00'
 
 apply plugin: 'idea'
 apply plugin: 'java'
+apply plugin: 'kotlin'
+
+def jarBaseName = "CalculatorSDK"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -30,13 +33,11 @@ dependencies {
 repositories {
     jcenter()
 }
-version = '1.0.00'
 
 jar {
     manifest {
-        attributes('Implementation-Title': project.name,
-                'Implementation-Version': project.version)
+        attributes 'Implementation-Title': 'CalculatorSDK jar'
+        attributes 'Implementation-Version': version
     }
-    baseName = 'CalculatorSDK'
-    from sourceSets.main.allSource
+    baseName jarBaseName
 }
