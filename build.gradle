@@ -1,4 +1,4 @@
-group 'com.mmc'
+group 'com.saharw'
 version '1.0.00'
 
 apply plugin: 'java'
