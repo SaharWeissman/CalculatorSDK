@@ -13,18 +13,30 @@ class ExpressionTree {
         var n : Node? = null
         var nLeft : Node? = null
         var nRight : Node? = null
-
+        var nodeValue = StringBuilder()
         // start iterating over every char of input & construct nodes accordingly
         for(i in 0 until expressionPostfix.length){
             var currChar = expressionPostfix[i]
 
             // if char is not an operator - construct node & add to stack
             if(!CharUtils.isOperator(currChar)){
-                n = Node(currChar)
-                nodeStack.push(n)
+                if(currChar == ' ' && nodeValue.trim().length > 0){
+                    n = Node(nodeValue.toString())
+                    nodeStack.push(n)
+                    nodeValue.delete(0, nodeValue.length)
+                }else {
+                    nodeValue.append(currChar)
+                }
+
             }else { // char is an operator
 
-                n = Node(currChar)
+                if(nodeValue.isNotEmpty()){
+                    n = Node(nodeValue.toString())
+                    nodeStack.push(n)
+                    nodeValue.delete(0, nodeValue.length)
+                }
+
+                n = Node(currChar.toString())
 
                 // pop 2 operands
                 nRight = nodeStack.pop()
@@ -37,6 +49,12 @@ class ExpressionTree {
                 // push operator node to stack
                 nodeStack.push(n)
             }
+        }
+
+        if(nodeValue.isNotEmpty()){
+            n = Node(nodeValue.toString())
+            nodeStack.push(n)
+            nodeValue.delete(0, nodeValue.length)
         }
 
         // return root
@@ -52,7 +70,7 @@ class ExpressionTree {
 
             // if leaf - return value
             if(node.left == null && node.right == null){
-                return node.`val`.toString().toFloat() // important! otherwise value will be the char value from ASCII table!!
+                return node.`val`.toFloat() // important! otherwise value will be the char value from ASCII table!!
             }else {
 
                 // recursively call eval on left & right children
@@ -62,11 +80,11 @@ class ExpressionTree {
                 /* since this node is not leaf, it must be an operand (due to the method we are building the tree) - we need
                 to determine which operand it is in order to apply it on left & right eval
                  */
-                if(node.`val` == '+'){
+                if(node.`val` == "+"){
                     return leftEval + rightEval
-                }else if (node.`val` == '-'){
+                }else if (node.`val` == "-"){
                     return leftEval - rightEval
-                }else if (node.`val` == '*'){
+                }else if (node.`val` == "*"){
                     return leftEval * rightEval
                 }else {
                     if(rightEval != 0F){
