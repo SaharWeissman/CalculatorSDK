@@ -1,1 +1,2 @@
-include ':ConsoleApp', ':Lib'
+rootProject.name = 'CalculatorSDK'
+include 'Lib'
