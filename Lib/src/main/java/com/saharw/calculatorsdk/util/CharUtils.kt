@@ -1,4 +1,4 @@
-package com.saharw.calculatorsdk.util
+package util
 
 object CharUtils {
 

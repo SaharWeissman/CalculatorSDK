@@ -1,6 +1,6 @@
-package com.saharw.calculatorsdk.core
+package main.core
 
-import com.saharw.calculatorsdk.util.StringUtils
+import util.StringUtils
 
 /**
  * Created by Sahar on 04/22/2018.

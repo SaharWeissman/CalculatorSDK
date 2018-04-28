@@ -1,4 +1,4 @@
-package com.saharw.calculatorsdk.util
+package util
 
 import java.util.*
 
@@ -38,6 +38,7 @@ object StringUtils {
                 }
                 operatorStack.pop()
             }else {
+                postfix.append(' ')
                 while(operatorStack.isNotEmpty() && currChar != '(' && CharUtils.precedence(operatorStack.peek()) >= CharUtils.precedence(currChar)){
                     postfix.append(operatorStack.pop())
                 }
