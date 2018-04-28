@@ -1,25 +1,43 @@
-plugins {
-    id 'java-library'
+group 'com.saharw'
+version '1.0.00'
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+def jarBaseName = "CalculatorSDK"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
 }
 
 dependencies {
-    api 'org.apache.commons:commons-math3:3.6.1'
+    compile 'org.apache.commons:commons-math3:3.6.1'
 
     implementation 'com.google.guava:guava:23.0'
 
     testImplementation 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 
 repositories {
     jcenter()
 }
-version = '1.0.00'
 
 jar {
     manifest {
-        attributes('Implementation-Title': project.name,
-                'Implementation-Version': project.version)
+        attributes 'Implementation-Title': 'CalculatorSDK jar'
+        attributes 'Implementation-Version': version
     }
-    baseName = 'CalculatorSDK'
-    from sourceSets.main.allSource
+    baseName jarBaseName
 }

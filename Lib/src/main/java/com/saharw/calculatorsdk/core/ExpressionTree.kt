@@ -1,6 +1,6 @@
-package main.core
+package com.saharw.calculatorsdk.core
 
-import util.CharUtils
+import com.saharw.calculatorsdk.util.CharUtils
 import java.util.*
 
 class ExpressionTree {
@@ -39,8 +39,8 @@ class ExpressionTree {
                 n = Node(currChar.toString())
 
                 // pop 2 operands
-                nRight = nodeStack.pop()
-                nLeft = nodeStack.pop()
+                nRight = if(nodeStack.isNotEmpty()) {nodeStack.pop()} else {null}
+                nLeft = if(nodeStack.isNotEmpty()) {nodeStack.pop()} else {null}
 
                 // make children of operator node
                 n.right = nRight

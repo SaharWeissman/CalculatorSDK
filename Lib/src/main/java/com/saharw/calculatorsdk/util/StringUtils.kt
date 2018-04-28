@@ -1,4 +1,4 @@
-package util
+package com.saharw.calculatorsdk.util
 
 import java.util.*
 
