@@ -38,6 +38,7 @@ object StringUtils {
                 }
                 operatorStack.pop()
             }else {
+                postfix.append(' ')
                 while(operatorStack.isNotEmpty() && currChar != '(' && CharUtils.precedence(operatorStack.peek()) >= CharUtils.precedence(currChar)){
                     postfix.append(operatorStack.pop())
                 }
