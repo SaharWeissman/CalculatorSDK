@@ -70,7 +70,11 @@ class ExpressionTree {
 
             // if leaf - return value
             if(node.left == null && node.right == null){
-                return node.`val`.toFloat() // important! otherwise value will be the char value from ASCII table!!
+                return if(node.`val`.isEmpty()){
+                    0f
+                }else {
+                    node.`val`.toFloat() // important! otherwise value will be the char value from ASCII table!!
+                }
             }else {
 
                 // recursively call eval on left & right children
